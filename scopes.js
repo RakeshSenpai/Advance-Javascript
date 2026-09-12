@@ -38,4 +38,24 @@ if(age >= 18){
     console.log(message)
 
 }
+const age = 17;
+
+if(age >= 18){
+    let message = 'Adult'
+    console.log(message)
+} else{
+    let message = 'Minor'
+    console.log(message)
+
+}
+const age = 17;
+
+if(age >= 18){
+    let message = 'Adult'
+    console.log(message)
+} else{
+    let message = 'Minor'
+    console.log(message)
+
+}
 
