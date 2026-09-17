@@ -14,6 +14,8 @@ async function getData(city) {
 button.addEventListener('click', async () => {
     const value = inputElm.value;
     const result = await getData(value);
-    console.log(result)
     cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
+    cityTime.innerText = `${result.location.localtime}`
+    cityTemp.innerText = `${result.current.temp_c}`
+    console.log(result)
 }) 
