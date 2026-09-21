@@ -4,6 +4,8 @@ const inputElm = document.getElementById('input-box');
 const cityName = document.getElementById('city-name')
 const cityTime = document.getElementById('city-time')
 const cityTemp = document.getElementById('city-temp')
+const humidity = document.getElementById('humidity')
+const cityWind = document.getElementById('city-wind')
 
 async function getData(city) {
     const apiUrl = await fetch (`http://api.weatherapi.com/v1/current.json?key=69f08d16f2024ac3b7e180601261409&q=${city}&aqi=yes`);
@@ -17,5 +19,7 @@ button.addEventListener('click', async () => {
     cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
     cityTime.innerText = `${result.location.localtime}`
     cityTemp.innerText = `${result.current.temp_c}`
+    humidity.innerText = `${result.current.humidity}`
+    cityWind.innerText = `${result.current.wind_kph}`
     console.log(result)
 }) 
