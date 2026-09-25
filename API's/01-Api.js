@@ -1,4 +1,5 @@
 const button = document.getElementById('search-btn');
+const dateButton = document.getElementById('date-btn');
 const inputElm = document.getElementById('input-box');
 
 const cityName = document.getElementById('city-name')
@@ -20,6 +21,26 @@ button.addEventListener('click', async () => {
     cityTime.innerText = `${result.location.localtime}`
     cityTemp.innerText = `${result.current.temp_c}`
     humidity.innerText = `${result.current.humidity}`
-    cityWind.innerText = `${result.current.wind_kph}`
+    cityWind.innerText = `${result.current.wind_kph}`                               
+    console.log(result)
+}) 
+button.addEventListener('click', async () => {
+    const value = inputElm.value;
+    const result = await getData(value);
+    cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
+    cityTime.innerText = `${result.location.localtime}`
+    cityTemp.innerText = `${result.current.temp_c}`
+    humidity.innerText = `${result.current.humidity}`
+    cityWind.innerText = `${result.current.wind_kph}`                               
+    console.log(result)
+}) 
+dateButton.addEventListener('click', async () => {
+    const value = inputElm.value;
+    const result = await getData(value);
+    cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
+    cityTime.innerText = `${result.location.localtime}`
+    cityTemp.innerText = `${result.current.temp_c}`
+    humidity.innerText = `${result.current.humidity}`
+    cityWind.innerText = `${result.current.wind_kph}`                               
     console.log(result)
 }) 
