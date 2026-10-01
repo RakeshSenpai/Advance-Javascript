@@ -34,7 +34,17 @@ button.addEventListener('click', async () => {
     cityWind.innerText = `${result.current.wind_kph}`                               
     console.log(result)
 }) 
-dateButton.addEventListener('click', async () => {
+button.addEventListener('click', async () => {
+    const value = inputElm.value;
+    const result = await getData(value);
+    cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
+    cityTime.innerText = `${result.location.localtime}`
+    cityTemp.innerText = `${result.current.temp_c}`
+    humidity.innerText = `${result.current.humidity}`
+    cityWind.innerText = `${result.current.wind_kph}`                               
+    console.log(result)
+}) 
+button.addEventListener('click', async () => {
     const value = inputElm.value;
     const result = await getData(value);
     cityName.innerText = `${result.location.name}, ${result.location.region}, ${result.location.country}`
